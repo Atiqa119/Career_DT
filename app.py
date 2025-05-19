@@ -12,7 +12,7 @@ from sklearn.feature_selection import SelectFromModel
 st.set_page_config(
     page_title="Career Path Predictor",
     page_icon="🧭",
-    layout="centered",
+    layout="wide",
     initial_sidebar_state="expanded"
 )
 
