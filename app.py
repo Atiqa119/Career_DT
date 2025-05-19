@@ -186,7 +186,6 @@ questions_dict = {
         {
             "question": "What is your area of interest?",
             "options": {
-                "Architecture": "Architecture",
                 "Arts": "Arts",
                 "Business": "Business",
                 "Consulting": "Consulting",
