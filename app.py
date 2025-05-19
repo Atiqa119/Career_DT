@@ -22,6 +22,9 @@ st.set_page_config(
 # -----------------------------
 # Custom CSS Styling
 # -----------------------------
+# -----------------------------
+# Custom CSS Styling
+# -----------------------------
 st.markdown("""
 <style>
     /* Main container styling with background image */
@@ -33,19 +36,27 @@ st.markdown("""
         background-repeat: no-repeat;
     }
     
-    /* Main content containers */
-    .main .block-container,
+    /* Main content area - white background from title to bottom */
+    .main .block-container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Individual components inside main container */
     .stRadio>div,
     .stNumberInput>div,
     .stSelectbox>div,
     .stDataFrame,
     .stAlert,
-    .st-expander {
+    .st-expander,
+    .stMarkdown {
         background-color: white !important;
-        padding: 15px;
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin-bottom: 15px;
+        padding: 1rem;
     }
     
     /* Header styling */
@@ -55,8 +66,18 @@ st.markdown("""
         padding-bottom: 15px;
         border-bottom: 2px solid #3498db;
         background-color: white;
-        padding: 15px;
+        padding: 1.5rem;
         border-radius: 8px;
+        margin-top: 0;
+    }
+    
+    /* Section headers */
+    .stMarkdown h2, .stMarkdown h3 {
+        color: #2c3e50;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1.5rem;
     }
     
     /* Button styling */
@@ -76,12 +97,12 @@ st.markdown("""
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     
-    /* Success message */
-    .stAlert .st-b7 {
-        background-color: #d4edda !important;
-        color: #155724 !important;
+    /* Form elements */
+    .stForm {
+        background-color: white;
+        padding: 1.5rem;
         border-radius: 8px;
-        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
     /* Card styling for prediction result */
@@ -95,31 +116,16 @@ st.markdown("""
         box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
     
-    /* Feature importance table */
-    .feature-table {
+    /* Tables and dataframes */
+    .stDataFrame, .feature-table {
         background-color: white;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     
-    /* Section headers */
-    .stMarkdown h2 {
-        color: #2c3e50;
-        border-bottom: 1px solid #ecf0f1;
-        padding-bottom: 8px;
-        margin-top: 25px;
-        background-color: white;
-        padding: 15px;
-        border-radius: 8px;
-    }
-    
-    /* Reset button styling */
-    .reset-btn {
-        background-color: #e74c3c !important;
-    }
-    
-    .reset-btn:hover {
-        background-color: #c0392b !important;
+    /* Adjust spacing */
+    .stMarkdown, .stRadio, .stNumberInput, .stSelectbox {
+        margin-bottom: 1rem;
     }
 </style>
 """, unsafe_allow_html=True)
