@@ -19,10 +19,13 @@ st.set_page_config(
 # -----------------------------
 # Custom CSS Styling
 # -----------------------------
+# -----------------------------
+# Custom CSS Styling
+# -----------------------------
 st.markdown("""
 <style>
-    /* Main container styling */
-     .stApp {
+    /* Main container styling with background image */
+    .stApp {
         background-image: url('https://tse4.mm.bing.net/th?id=OIP.t6nww2dpSMT-ZrjIfbX3DAHaDZ&pid=Api&P=0&h=220');
         background-size: cover;
         background-position: center;
@@ -30,16 +33,19 @@ st.markdown("""
         background-repeat: no-repeat;
     }
     
-    /* Add a semi-transparent overlay to improve text readability */
-    .stApp::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(255, 255, 255, 0.85);
-        z-index: -1;
+    /* Main content containers */
+    .main .block-container,
+    .stRadio>div,
+    .stNumberInput>div,
+    .stSelectbox>div,
+    .stDataFrame,
+    .stAlert,
+    .st-expander {
+        background-color: white !important;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 15px;
     }
     
     /* Header styling */
@@ -48,6 +54,9 @@ st.markdown("""
         text-align: center;
         padding-bottom: 15px;
         border-bottom: 2px solid #3498db;
+        background-color: white;
+        padding: 15px;
+        border-radius: 8px;
     }
     
     /* Button styling */
@@ -65,15 +74,6 @@ st.markdown("""
         background-color: #2980b9;
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    /* Radio button styling */
-    .stRadio>div {
-        background-color: white;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        margin-bottom: 15px;
     }
     
     /* Success message */
@@ -108,6 +108,9 @@ st.markdown("""
         border-bottom: 1px solid #ecf0f1;
         padding-bottom: 8px;
         margin-top: 25px;
+        background-color: white;
+        padding: 15px;
+        border-radius: 8px;
     }
     
     /* Reset button styling */
