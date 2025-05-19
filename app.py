@@ -131,19 +131,22 @@ def preprocess_data(df):
     category_mapping = {}
     for col in df.columns:
         if df[col].dtype == 'object' and col != "Predicted_Career_Field":
-            unique_values = df[col].unique()
+            # Convert to string in case there are mixed types
+            unique_values = df[col].astype(str).unique()
             category_mapping[col] = list(unique_values)
     
     # Second pass: Create label encoders with all known categories
     for col in df.columns:
         if df[col].dtype == 'object' and col != "Predicted_Career_Field":
             le = LabelEncoder()
-            le.fit(category_mapping[col])
-            df[col] = le.transform(df[col])
+            # Ensure we're working with strings and handle NaN/None values
+            categories = [str(x) for x in category_mapping[col]]
+            le.fit(categories)
+            df[col] = le.transform(df[col].astype(str))
             le_dict[col] = le
     
     target_le = LabelEncoder()
-    df["Predicted_Career_Field"] = target_le.fit_transform(df["Predicted_Career_Field"])
+    df["Predicted_Career_Field"] = target_le.fit_transform(df["Predicted_Career_Field"].astype(str))
     
     return df, le_dict, target_le, category_mapping
 
