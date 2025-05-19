@@ -112,7 +112,7 @@ st.markdown("""
 # -----------------------------
 @st.cache_data
 def load_data():
-    df = pd.read_excel("new updated datas.xlsx", sheet_name="in")
+    df = pd.read_excel("Book1.xlsx", sheet_name="Sheet1")
     return df
 
 # -----------------------------
@@ -1460,7 +1460,7 @@ def ask_questions(features):
             elif feature == "Field_of_Study":
                 user_input[feature] = st.selectbox(
                     "What is your field of study?",
-                    options=["Accounting", "Computer Science", "Medicine"],
+                    options=["Accounting", "Computer Science", "Medicine","law"],
                     key=f"sel_{feature}"
                 )
             elif feature == "Highest_Degree":
