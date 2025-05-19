@@ -1551,14 +1551,16 @@ def main():
     """, unsafe_allow_html=True)
 
     # Get user input - only for selected features
+    # Get user input - only for selected features
     with st.form("career_form"):
         user_input = ask_questions(selected_features)
         
         # Form submit and reset buttons
-        col1 = st.columns(1)
+        col1, col2 = st.columns(2)
         with col1:
             submit_button = st.form_submit_button("🔮 Predict My Career", type="primary")
-      
+        with col2:
+            reset_button = st.form_submit_button("🔄 Reset Questions", type="secondary")
 
     # Handle form submission
     if submit_button:
