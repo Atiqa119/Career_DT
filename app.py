@@ -22,10 +22,24 @@ st.set_page_config(
 st.markdown("""
 <style>
     /* Main container styling */
-      .stApp {
-        background-color: #f5f7fa;  /* Change this color */
-        background-image: linear-gradient(to right, #f5f7fa, #e4e8eb); /* Optional gradient */
-        color: #333333;
+     .stApp {
+        background-image: url('https://tse4.mm.bing.net/th?id=OIP.t6nww2dpSMT-ZrjIfbX3DAHaDZ&pid=Api&P=0&h=220');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    
+    /* Add a semi-transparent overlay to improve text readability */
+    .stApp::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.85);
+        z-index: -1;
     }
     
     /* Header styling */
