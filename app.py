@@ -1464,8 +1464,7 @@ def ask_questions(features):
             elif feature == "Field_of_Study":
                 user_input[feature] = st.selectbox(
                     "What is your field of study?",
-                    options=["Accounting", "Computer Science", "Medicine", "law", "Fine Arts", "Education
-", "Engineering", "Business Administration", "Psychology", "Biology", "Sociology"],
+                    options=["Accounting", "Computer Science", "Medicine", "law", "Fine Arts", "Education", "Engineering", "Business Administration", "Psychology", "Biology", "Sociology"],
                     key=f"sel_{feature}"
                 )
             elif feature == "Highest_Degree":
