@@ -27,36 +27,11 @@ st.set_page_config(
 # -----------------------------
 st.markdown("""
 <style>
-    /* Main container styling with background image */
-    .stApp {
-        background-image: url('https://tse4.mm.bing.net/th?id=OIP.t6nww2dpSMT-ZrjIfbX3DAHaDZ&pid=Api&P=0&h=220');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-    }
-    
-    /* Main content area - white background from title to bottom */
-    .main .block-container {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    
-    /* Individual components inside main container */
-    .stRadio>div,
-    .stNumberInput>div,
-    .stSelectbox>div,
-    .stDataFrame,
-    .stAlert,
-    .st-expander,
-    .stMarkdown {
-        background-color: white !important;
-        border-radius: 8px;
-        padding: 1rem;
+    /* Main container styling */
+      .stApp {
+        background-color: #f5f7fa;  /* Change this color */
+        background-image: linear-gradient(to right, #f5f7fa, #e4e8eb); /* Optional gradient */
+        color: #333333;
     }
     
     /* Header styling */
@@ -65,19 +40,6 @@ st.markdown("""
         text-align: center;
         padding-bottom: 15px;
         border-bottom: 2px solid #3498db;
-        background-color: white;
-        padding: 1.5rem;
-        border-radius: 8px;
-        margin-top: 0;
-    }
-    
-    /* Section headers */
-    .stMarkdown h2, .stMarkdown h3 {
-        color: #2c3e50;
-        background-color: white;
-        padding: 1rem;
-        border-radius: 8px;
-        margin-top: 1.5rem;
     }
     
     /* Button styling */
@@ -97,12 +59,21 @@ st.markdown("""
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     
-    /* Form elements */
-    .stForm {
+    /* Radio button styling */
+    .stRadio>div {
         background-color: white;
-        padding: 1.5rem;
+        padding: 15px;
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        margin-bottom: 15px;
+    }
+    
+    /* Success message */
+    .stAlert .st-b7 {
+        background-color: #d4edda !important;
+        color: #155724 !important;
+        border-radius: 8px;
+        padding: 15px;
     }
     
     /* Card styling for prediction result */
@@ -116,16 +87,28 @@ st.markdown("""
         box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
     
-    /* Tables and dataframes */
-    .stDataFrame, .feature-table {
+    /* Feature importance table */
+    .feature-table {
         background-color: white;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     
-    /* Adjust spacing */
-    .stMarkdown, .stRadio, .stNumberInput, .stSelectbox {
-        margin-bottom: 1rem;
+    /* Section headers */
+    .stMarkdown h2 {
+        color: #2c3e50;
+        border-bottom: 1px solid #ecf0f1;
+        padding-bottom: 8px;
+        margin-top: 25px;
+    }
+    
+    /* Reset button styling */
+    .reset-btn {
+        background-color: #e74c3c !important;
+    }
+    
+    .reset-btn:hover {
+        background-color: #c0392b !important;
     }
 </style>
 """, unsafe_allow_html=True)
